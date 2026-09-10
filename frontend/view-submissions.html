@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>View Submissions | EduMetric</title>
+  <link rel="stylesheet" href="css/view-submissions.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">📚 EduMetric</div>
+    <div class="nav-user">
+      <button onclick="location.href='dashboard.html'" class="btn btn-secondary">Dashboard</button>
+      <button id="logoutBtn" class="btn btn-logout">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>👁️ View All Submissions</h1>
+
+    <!-- Select Assignment -->
+    <div class="card">
+      <h2>Select Assignment</h2>
+      <div id="loadingAssignments" class="loading">Loading your assignments...</div>
+      <div id="assignmentsSelect" class="form-group" style="display: none;">
+        <select id="assignmentId" class="form-control">
+          <option value="">-- Select an assignment --</option>
+        </select>
+      </div>
+      <div id="selectError" class="error-msg"></div>
+    </div>
+
+    <!-- Submissions List -->
+    <div id="submissionsSection" class="card" style="display: none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h2 id="submissionsTitle">Submissions</h2>
+        <button id="closeListBtn" class="btn btn-secondary">✕ Close</button>
+      </div>
+      <div id="loadingSubmissions" class="loading">Loading submissions...</div>
+      <div id="submissionsList"></div>
+      <div id="noSubmissions" class="no-data">No submissions found for this assignment</div>
+    </div>
+  </div>
+
+  <script src="js/view-submissions.js"></script>
+</body>
+</html>

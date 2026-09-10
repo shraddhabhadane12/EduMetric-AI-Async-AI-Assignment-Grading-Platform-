@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assignment Details | EduMetric</title>
+  <link rel="stylesheet" href="css/assignment-detail.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">📚 EduMetric</div>
+    <div class="nav-user">
+      <button onclick="location.href='assignments.html'" class="btn btn-secondary">← Back to Assignments</button>
+      <button onclick="location.href='dashboard.html'" class="btn btn-secondary">Dashboard</button>
+      <button id="logoutBtn" class="btn btn-logout">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div id="loadingMsg" class="loading">Loading assignment details...</div>
+    
+    <div id="assignmentDetail" class="card" style="display: none;">
+      <div class="detail-header">
+        <h1 id="assignmentTitle"></h1>
+        <div class="detail-meta">
+          <span id="assignmentId" class="badge"></span>
+          <span id="maxMarks" class="badge badge-primary"></span>
+        </div>
+      </div>
+
+      <div id="aimSection" class="detail-section">
+        <h3>📌 Aim Reference</h3>
+        <div id="aimContent" class="section-content"></div>
+      </div>
+
+      <div id="objectivesSection" class="detail-section">
+        <h3>🎯 Objectives Reference</h3>
+        <div id="objectivesContent" class="section-content"></div>
+      </div>
+
+      <div id="codeSection" class="detail-section">
+        <h3>💻 Code Reference</h3>
+        <pre id="codeContent" class="code-content"></pre>
+      </div>
+
+      <div id="conclusionSection" class="detail-section">
+        <h3>📝 Conclusion Reference</h3>
+        <div id="conclusionContent" class="section-content"></div>
+      </div>
+
+      <div class="detail-actions">
+        <button id="submitBtn" class="btn btn-primary">📤 Submit This Assignment</button>
+        <button onclick="location.href='assignments.html'" class="btn btn-secondary">← Back to List</button>
+      </div>
+    </div>
+
+    <div id="errorMsg" class="error-msg" style="display: none;"></div>
+  </div>
+
+  <script src="js/assignment-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload PDF Assignment | EduMetric</title>
+  <link rel="stylesheet" href="css/upload-pdf.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">📚 EduMetric</div>
+    <div class="nav-user">
+      <button onclick="location.href='dashboard.html'" class="btn btn-secondary">Dashboard</button>
+      <button id="logoutBtn" class="btn btn-logout">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>📤 Upload PDF Assignment</h1>
+
+    <div class="card">
+      <h2>Teacher: Create Assignment from PDF</h2>
+      <p class="info-text">Upload a PDF file to automatically extract and create an assignment</p>
+      
+      <form id="uploadForm">
+        <div class="form-group">
+          <label>Select PDF File *</label>
+          <input type="file" id="pdfFile" accept=".pdf" class="file-input" required />
+          <p class="help-text">The system will extract text and create an assignment automatically</p>
+        </div>
+
+        <div id="uploadError" class="error-msg"></div>
+        <div id="uploadSuccess" class="success-msg"></div>
+
+        <button type="submit" class="btn btn-primary">
+          <span id="btnText">Upload & Create Assignment</span>
+          <span id="btnLoader" class="loader"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/upload-pdf.js"></script>
+</body>
+</html>

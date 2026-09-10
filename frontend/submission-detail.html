@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submission Detail | EduMetric</title>
+  <link rel="stylesheet" href="css/submission-detail.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">📚 EduMetric</div>
+    <div class="nav-user">
+      <button onclick="location.href='dashboard.html'" class="btn btn-secondary">Dashboard</button>
+      <button id="logoutBtn" class="btn btn-logout">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>📝 Submission Details</h1>
+
+    <div id="loadingMsg" class="loading">Loading submission...</div>
+    <div id="errorMsg" class="error-msg"></div>
+
+    <div id="contentSection" style="display: none;">
+      <div class="card">
+        <h2>Submission Info</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <label>Submission ID:</label>
+            <span id="submissionId"></span>
+          </div>
+          <div class="info-item">
+            <label>Assignment ID:</label>
+            <span id="assignmentId"></span>
+          </div>
+          <div class="info-item">
+            <label>Student ID:</label>
+            <span id="studentId"></span>
+          </div>
+          <div class="info-item">
+            <label>Status:</label>
+            <span id="status" class="badge"></span>
+          </div>
+          <div class="info-item">
+            <label>Submitted At:</label>
+            <span id="submittedAt"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Answers</h2>
+        <div class="answer-section">
+          <h3>Aim</h3>
+          <div id="aimAns" class="answer-content"></div>
+        </div>
+        <div class="answer-section">
+          <h3>Objectives</h3>
+          <div id="objectivesAns" class="answer-content"></div>
+        </div>
+        <div class="answer-section">
+          <h3>Code</h3>
+          <pre id="codeAns" class="code-content"></pre>
+        </div>
+        <div class="answer-section">
+          <h3>Conclusion</h3>
+          <div id="conclusionAns" class="answer-content"></div>
+        </div>
+      </div>
+
+      <div id="evaluationCard" class="card" style="display: none;">
+        <h2>Evaluation</h2>
+        <div class="eval-grid">
+          <div class="eval-item">
+            <label>Marks Obtained:</label>
+            <span id="marksObtained" class="marks"></span>
+          </div>
+        </div>
+        <div class="feedback-section">
+          <label>Feedback:</label>
+          <div id="feedback" class="feedback-box"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/submission-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit via PDF | EduMetric</title>
+  <link rel="stylesheet" href="css/submit-pdf.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">📚 EduMetric</div>
+    <div class="nav-user">
+      <button onclick="location.href='dashboard.html'" class="btn btn-secondary">Dashboard</button>
+      <button id="logoutBtn" class="btn btn-logout">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>📄 Submit Assignment via PDF</h1>
+
+    <div class="card">
+      <h2>Select Assignment</h2>
+      <div id="loadingAssignments" class="loading">Loading assignments...</div>
+      <div id="assignmentSelect" class="form-group">
+        <select id="assignmentId" class="form-control">
+          <option value="">-- Select an assignment --</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Step 1: Upload PDF -->
+    <div id="uploadSection" class="card" style="display: none;">
+      <h2>📤 Upload Your Answers (PDF)</h2>
+      <form id="uploadForm">
+        <div class="form-group">
+          <label>Select PDF File *</label>
+          <input type="file" id="pdfFile" accept=".pdf" class="file-input" required />
+          <p class="help-text">Upload a PDF containing your assignment answers</p>
+        </div>
+
+        <div id="uploadError" class="error-msg"></div>
+
+        <button type="submit" class="btn btn-primary">
+          <span id="btnText">🔍 Extract & Preview</span>
+          <span id="btnLoader" class="loader"></span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Step 2: Preview & Verify -->
+    <div id="previewSection" class="card" style="display: none;">
+      <h2>✅ Preview Extracted Content</h2>
+      <p class="help-text" style="margin-bottom: 20px;">Review the extracted text below before submitting</p>
+
+      <form id="submitForm">
+        <div class="form-group">
+          <label>Aim</label>
+          <textarea id="aimPreview" rows="4" class="form-control" readonly></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Objectives</label>
+          <textarea id="objectivesPreview" rows="6" class="form-control" readonly></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Code</label>
+          <textarea id="codePreview" rows="12" class="form-control code-preview" readonly></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Conclusion</label>
+          <textarea id="conclusionPreview" rows="6" class="form-control" readonly></textarea>
+        </div>
+
+        <div id="submitError" class="error-msg"></div>
+        <div id="submitSuccess" class="success-msg"></div>
+
+        <div style="display: flex; gap: 10px;">
+          <button type="submit" class="btn btn-primary">
+            <span id="submitBtnText">✅ Confirm & Submit</span>
+            <span id="submitBtnLoader" class="loader"></span>
+          </button>
+          <button type="button" id="resetBtn" class="btn btn-secondary">
+            ← Upload Different File
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/submit-pdf.js"></script>
+</body>
+</html>

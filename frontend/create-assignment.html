@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Assignment | EduMetric</title>
+  <link rel="stylesheet" href="css/create-assignment.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">📚 EduMetric</div>
+    <div class="nav-user">
+      <button onclick="location.href='assignments.html'" class="btn btn-secondary">View Assignments</button>
+      <button onclick="location.href='dashboard.html'" class="btn btn-secondary">Dashboard</button>
+      <button id="logoutBtn" class="btn btn-logout">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>➕ Create New Assignment</h1>
+
+    <div class="card">
+      <h2>Assignment Details</h2>
+      <form id="createForm">
+        <div class="form-group">
+          <label>Title *</label>
+          <input type="text" id="title" class="form-control" placeholder="Assignment title" required />
+        </div>
+        <div class="form-group">
+          <label>Aim Reference</label>
+          <textarea id="aim_ref" class="form-control" rows="3" placeholder="Expected aim content"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Objectives Reference</label>
+          <textarea id="objectives_ref" class="form-control" rows="3" placeholder="Expected objectives content"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Code Reference</label>
+          <textarea id="code_ref" class="form-control code" rows="6" placeholder="Expected code"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Conclusion Reference</label>
+          <textarea id="conclusion_ref" class="form-control" rows="3" placeholder="Expected conclusion"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Maximum Marks *</label>
+          <input type="number" id="max_marks" class="form-control" value="100" min="1" required />
+        </div>
+        <div id="createError" class="error-msg"></div>
+        <div id="createSuccess" class="success-msg"></div>
+        <button type="submit" class="btn btn-primary">Create Assignment</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/create-assignment.js"></script>
+</body>
+</html>

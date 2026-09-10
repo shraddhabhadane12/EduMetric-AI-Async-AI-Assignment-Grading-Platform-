@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit Assignment | EduMetric</title>
+  <link rel="stylesheet" href="css/submit.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">📚 EduMetric</div>
+    <div class="nav-user">
+      <button onclick="location.href='dashboard.html'" class="btn btn-secondary">Dashboard</button>
+      <button id="logoutBtn" class="btn btn-logout">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>✍️ Submit Assignment</h1>
+
+    <div class="card">
+      <h2>Select Assignment</h2>
+      <div id="loadingAssignments" class="loading">Loading assignments...</div>
+      <div id="assignmentSelect" class="form-group">
+        <select id="assignmentId" class="form-control">
+          <option value="">-- Select an assignment --</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="submitSection" class="card" style="display: none;">
+      <h2>Your Answers</h2>
+      <form id="submitForm">
+        <div class="form-group">
+          <label>Aim Answer</label>
+          <textarea id="aim_ans" class="form-control" rows="4" placeholder="Your aim answer"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Objectives Answer</label>
+          <textarea id="objectives_ans" class="form-control" rows="4" placeholder="Your objectives answer"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Code Answer</label>
+          <textarea id="code_ans" class="form-control code" rows="8" placeholder="Your code"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Conclusion Answer</label>
+          <textarea id="conclusion_ans" class="form-control" rows="4" placeholder="Your conclusion"></textarea>
+        </div>
+
+        <div id="submitError" class="error-msg"></div>
+        <div id="submitSuccess" class="success-msg"></div>
+
+        <button type="submit" class="btn btn-primary">
+          <span id="btnText">Submit Assignment</span>
+          <span id="btnLoader" class="loader"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/submit.js"></script>
+</body>
+</html>

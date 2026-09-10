@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | EduMetric</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">📚 EduMetric</div>
+    <div class="nav-user">
+      <span id="userEmail"></span>
+      <span id="userRole" class="badge"></span>
+      <button id="logoutBtn" class="btn btn-logout">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="welcome-section">
+      <h1>Dashboard</h1>
+      <p id="welcomeText"></p>
+    </div>
+
+    <div class="actions-grid">
+      <!-- Common Actions -->
+      <div class="action-card" id="viewAssignmentsCard">
+        <div class="action-icon">📋</div>
+        <h3>View Assignments</h3>
+        <p>Browse all available assignments</p>
+        <button class="btn btn-primary">View</button>
+      </div>
+
+      <!-- Student Only -->
+      <div class="action-card student-only" id="submitTextCard">
+        <div class="action-icon">✍️</div>
+        <h3>Submit via Text</h3>
+        <p>Submit assignment by typing answers</p>
+        <button class="btn btn-primary">Submit</button>
+      </div>
+
+      <div class="action-card student-only" id="submitPdfCard">
+        <div class="action-icon">📄</div>
+        <h3>Submit via PDF</h3>
+        <p>Upload PDF with your answers</p>
+        <button class="btn btn-primary">Submit</button>
+      </div>
+
+      <div class="action-card student-only" id="mySubmissionsCard">
+        <div class="action-icon">📊</div>
+        <h3>My Submissions</h3>
+        <p>View your submitted assignments</p>
+        <button class="btn btn-primary">View</button>
+      </div>
+
+      <!-- Teacher Only -->
+      <div class="action-card teacher-only" id="createAssignmentCard">
+        <div class="action-icon">➕</div>
+        <h3>Create Assignment</h3>
+        <p>Create new assignment manually</p>
+        <button class="btn btn-primary">Create</button>
+      </div>
+
+      <div class="action-card teacher-only" id="uploadPdfCard">
+        <div class="action-icon">📤</div>
+        <h3>Upload PDF Assignment</h3>
+        <p>Create assignment from PDF</p>
+        <button class="btn btn-primary">Upload</button>
+      </div>
+
+      <div class="action-card teacher-only" id="viewSubmissionsCard">
+        <div class="action-icon">👁️</div>
+        <h3>View All Submissions</h3>
+        <p>View submissions with student details</p>
+        <button class="btn btn-primary">View</button>
+      </div>
+
+      <div class="action-card teacher-only" id="gradeCard">
+        <div class="action-icon">🎯</div>
+        <h3>Grade Submissions</h3>
+        <p>Grade student submissions</p>
+        <button class="btn btn-primary">Grade</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

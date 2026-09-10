@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grade Submissions | EduMetric</title>
+  <link rel="stylesheet" href="css/grading.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">📚 EduMetric</div>
+    <div class="nav-user">
+      <button onclick="location.href='dashboard.html'" class="btn btn-secondary">Dashboard</button>
+      <button id="logoutBtn" class="btn btn-logout">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="header-section">
+      <div>
+        <h1>🎯 Grade Submissions</h1>
+        <p class="subtitle">Evaluate student submissions and provide feedback</p>
+      </div>
+      <button onclick="location.href='view-submissions.html'" class="btn-view-all">
+        📋 View All Submissions
+      </button>
+    </div>
+
+    <!-- Grade Submission Form -->
+    <div class="card grade-card">
+      <div class="card-header">
+        <h2>Grade a Submission</h2>
+        <p class="card-subtitle">Select assignment and submission to grade</p>
+      </div>
+      
+      <!-- Loading assignments -->
+      <div id="loadingAssignments" class="loading" style="display: none;">Loading assignments...</div>
+      
+      <!-- Submission Context (shown when coming from view-submissions) -->
+      <div id="submissionContext" class="submission-context" style="display: none;">
+        <div class="context-header">📋 Submission Details</div>
+        <div class="context-grid">
+          <div class="context-item">
+            <span class="context-label">Assignment:</span>
+            <span class="context-value" id="contextAssignment"></span>
+          </div>
+          <div class="context-item">
+            <span class="context-label">Student:</span>
+            <span class="context-value" id="contextStudent"></span>
+          </div>
+          <div class="context-item">
+            <span class="context-label">Submitted:</span>
+            <span class="context-value" id="contextDate"></span>
+          </div>
+        </div>
+      </div>
+      
+      <form id="gradeForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="assignmentSelect">📝 Select Assignment</label>
+            <select id="assignmentSelect" class="form-control" required>
+              <option value="">-- Choose an assignment --</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="submissionSelect">📄 Select Submission</label>
+            <select id="submissionSelect" class="form-control" required disabled>
+              <option value="">-- Choose a submission --</option>
+            </select>
+            <div id="loadingSubmissions" class="loading-small" style="display: none;">Loading submissions...</div>
+          </div>
+        </div>
+
+        <!-- Hidden fields for IDs -->
+        <input type="hidden" id="assignmentId">
+        <input type="hidden" id="submissionId">
+
+        <button type="submit" class="btn-submit" id="gradeBtn" disabled>
+          <span id="btnText">✓ Grade Submission</span>
+          <span id="btnLoader" class="loader" style="display: none;">⏳</span>
+        </button>
+
+        <!-- Status Display -->
+        <div id="gradingStatus" class="grading-status" style="display: none;">
+          <div class="status-icon">🤖</div>
+          <div class="status-text">
+            <div class="status-title">AI is analyzing...</div>
+            <div class="status-subtitle">Please wait while we evaluate the submission</div>
+          </div>
+          <div class="status-spinner"></div>
+        </div>
+      </form>
+
+      <div id="gradeError" class="error" style="display: none;"></div>
+      <div id="gradeSuccess" class="success" style="display: none;"></div>
+      <div id="alreadyGraded" class="already-graded" style="display: none;">
+        <div class="already-graded-icon">✅</div>
+        <div>
+          <div class="already-graded-title">Already Evaluated!</div>
+          <div class="already-graded-text">This submission has already been graded. Check the results below.</div>
+        </div>
+      </div>
+
+      <!-- Results Section -->
+      <div id="resultSection" class="result-section" style="display: none;">
+        <div class="result-header">
+          <h3>✅ Grading Result</h3>
+        </div>
+        <div class="result-grid">
+          <div class="result-item">
+            <div class="result-label">Submission ID</div>
+            <div class="result-value" id="resultSubmissionId"></div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Marks Obtained</div>
+            <div class="result-value marks-value" id="resultMarks"></div>
+          </div>
+          <div class="result-item" style="grid-column: 1 / -1;">
+            <div class="result-label">Status</div>
+            <div><span id="resultStatus" class="status-badge"></span></div>
+          </div>
+          <div class="result-item" style="grid-column: 1 / -1;">
+            <div class="result-label">Feedback</div>
+            <div class="feedback-box" id="resultFeedback"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/grading.js"></script>
+</body>
+</html>

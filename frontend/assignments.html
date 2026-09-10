@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assignments | EduMetric</title>
+  <link rel="stylesheet" href="css/assignments.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">📚 EduMetric</div>
+    <div class="nav-user">
+      <button onclick="location.href='dashboard.html'" class="btn btn-secondary">Dashboard</button>
+      <button id="logoutBtn" class="btn btn-logout">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>📋 Assignments</h1>
+
+    <!-- All: List Assignments -->
+    <div class="section">
+      <div class="card">
+        <h2>All Assignments</h2>
+        <div id="loadingMsg" class="loading">Loading assignments...</div>
+        <div id="assignmentsList" class="assignments-list"></div>
+        <div id="noAssignments" class="no-data">No assignments available</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/assignments.js"></script>
+</body>
+</html>
