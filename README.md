@@ -735,4 +735,3 @@ If you found this project useful, please consider:
 
 ---
 
-**Made with ❤️ by [Shounak](https://github.com/Shounak-Chavan)**
